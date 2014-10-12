@@ -1,0 +1,63 @@
+<html>
+
+<head>
+   <link rel="stylesheet" type="text/css" href="css/global.css">
+   <link rel="stylesheet" type="text/css" href="css/calendarStyle.css">
+   <link rel="stylesheet" type="text/css" href="css/checkboxStyle.css">
+   <link rel="stylesheet" type="text/css" href="css/jquery-steps.css">
+   <link rel="stylesheet" type="text/css" href="css/bookOnline.css">
+   <title>Check Availability Testing Tool</title>
+</head>
+
+<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="js/lib/zebra_datepicker.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery.steps.min.js"></script>
+<script type="text/javascript" src="js/lib/icheck.min.js"></script>
+<script type="text/javascript" src="js/lib/spin.min.js"></script>
+
+<script type="text/javascript" src="js/bookOnline.min.js"></script>
+
+<body bgcolor="#000000">
+
+		<span style="color: #FFFFFF;">Use this tool to test the functionality of checkAvailability.php without having to actually book things.</span>
+
+	        <div style="padding-top: 8px;">
+
+		        <table width="100%">
+		            <tr>
+			            <td width=260 valign=top style="padding-left: 1px;">
+			                <form action="javascript:void(0)" method="post">
+				                <div>
+				                    <input id="datepicker" type="hidden">
+				                    <div id="container" style="margin: 10px 0 0 0; height: 300px"></div>
+				                </div>
+			                </form>
+			            </td>
+			            <td valign=top style="padding-top: 9px;">
+			            	<div class="timeOptions" id="timeOptions"></div>
+			            </td>
+		            </tr>
+		        </table>
+
+            	<div class="appointment_spinner" id="appointment_spinner"></div>
+	   	        <div class="timeCounter" id="appointmentTabTotals"></div>
+	   	        <div class="appointmentConfirm" id="appointmentConfirm"></div>
+	        </div>
+
+
+        <!-- Inject the various widget modules (calendar, isteps, icheck, etc) -->
+		<script type="text/javascript" src="js/moduleLoader.min.js"></script>
+
+		<script type="text/javascript">
+			appointmentDuration = 30;
+		</script>
+
+        </div>
+
+		<a href="../bookOnline.html" id="bookAgain" class="bookAgain">Book Another Appointment</a>
+    </div>
+
+	<br>
+
+  </div>
+</body>

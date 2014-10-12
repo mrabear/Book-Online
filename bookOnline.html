@@ -1,0 +1,330 @@
+<html>
+
+<head>
+   <link rel="stylesheet" type="text/css" href="css/global.css">
+
+   <!-- bookOnline required style sheets, these can be modified to change the look of the application -->
+   <link rel="stylesheet" type="text/css" href="css/calendarStyle.css">
+   <link rel="stylesheet" type="text/css" href="css/checkboxStyle.css">
+   <link rel="stylesheet" type="text/css" href="css/jquery-steps.css">
+   <link rel="stylesheet" type="text/css" href="css/bookOnline.css">
+   <title>Verbena Esthetics Studio: Book Online</title>
+</head>
+
+<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="js/lib/zebra_datepicker.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery.steps.min.js"></script>
+<script type="text/javascript" src="js/lib/icheck.min.js"></script>
+<script type="text/javascript" src="js/lib/spin.min.js"></script>
+
+<script type="text/javascript" src="js/bookOnline.min.js"></script>
+
+<body bgcolor="#000000">
+  <div class='maincontent'>
+    <div class="bookonline_outer_text_box">
+      <div class="inner_text_box">
+
+        <p align="center" style="margin-top: 7px; margin-bottom: 9px;">
+          <span class="title">Book an Appointment!</span>
+          <hr class="blue_fade">
+        </p>
+
+        <!-- START OF THE BOOKONLINE FORMATTING CODE, EVERYTHING PRIOR TO THIS IS TEMPLATE CODE ONLY -->
+        <!-- Start of the jquery.steps form -->
+        <div id="wizard" class="wizard">
+        	<!-- Step 1 of the form -->
+	        <h1 style="font-size: 12px;">Services</h1>
+	        <div style="padding-top: 8px;">
+	          <div style="margin-bottom: 5px; text-align: left; width: 100%;font-size: 30px;">
+	            Online Booking: Select Your Services
+	          </div>
+	          
+	          <div style="height: 10px;"><hr class="blueLineSolid"></div>
+	          
+	          <!-- the table of facials -->
+	          <table width="100%">
+	            <tr>
+	              <td rowspan=2 width=100 align=left>
+	                <span style="font-size: 30px;">Facials</span>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="radio" name="facial" value="NPNG">
+	                <label>NPNG</label>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="radio" name="facial" value="Cleansing">
+	                <label>Cleansing</label>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="radio" name="facial" value="Hydrating">
+	                <label>Hydrating</label>
+	              </td>
+	            </tr>
+	            <tr>
+	              <td class="serviceSelectionCell">
+	                <input type="radio" name="facial" value="Verbena">
+	                <label>Verbena</label>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="radio" name="facial" value="Brightening">
+	                <label>Brightening</label>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="radio" name="facial" value="Soothing">
+	                <label>Soothing</label>
+	              </td>
+	            </tr>
+	        </table>
+
+	        <!-- the table of other services -->
+	        <table>
+	            <tr><td colspan=5 height=16><hr class="blueLineSolid"></td></tr>
+	            <tr>
+	              <td rowspan=3 width=100 align=left>
+	                <span style="font-size: 30px;">Waxing</span>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="checkbox" name="service" value="Brow">
+	                <label>Brow</label>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="checkbox" name="service" value="Underarm">
+	                <label>Underarm</label>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="checkbox" name="service" value="Lower_Back">
+	                <label>Lower&nbsp;Back</label>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="checkbox" name="service" value="Full_Leg">
+	                <label>Full Leg</label>
+	              </td>
+	            </tr>
+	            <tr>
+	              <td class="serviceSelectionCell">
+	                <input type="checkbox" name="service" value="Lip">
+	                <label>Lip</label>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="checkbox" name="service" value="Half_Arm">
+	                <label>Half Arm</label>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="checkbox" name="service" value="Bikini">
+	                <label>Bikini</label>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="checkbox" name="service" value="Chest_Men">
+	                <label>Chest (men)</label>
+	              </td>
+	            </tr>
+	            <tr>
+	              <td class="serviceSelectionCell">
+	                <input type="checkbox" name="service" value="Chin">
+	                <label>Chin</label>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="checkbox" name="service" value="Full_Arm">
+	                <label>Full Arm</label>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="checkbox" name="service" value="Half_Leg">
+	                <label>Half Leg</label>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="checkbox" name="service" value="Back_Men">
+	                <label>Back (men)</label>
+	              </td>
+	            </tr>
+	            <tr><td colspan=5 height=16><hr class="blueLineSolid"></td></tr>
+	            <tr>
+	              <td rowspan=3 width=100 align=left>
+	                <span style="font-size: 30px;">Other</span>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="checkbox" name="service" value="Makeup_Application">
+	                <label>Makeup Application</label>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="checkbox" name="service" value="Eye_Treatment">
+	                <label>Eye &nbsp;&nbsp;Treatment</label>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="checkbox" name="service" value="Cold_Aloe_Mask">
+	                <label>Cold Aloe Mask</label>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="checkbox" name="service" value="High_Frequency">
+	                <label>High &nbsp;&nbsp;Frequency</label>
+	              </td>
+	            </tr>
+	            <tr>
+	              <td class="serviceSelectionCell">
+	                <input type="checkbox" name="service" value="Hand_Treatment">
+	                <label>Hand Treatment</label>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="checkbox" name="service" value="Collagen_Ampoule">
+	                <label>Collagen Ampoule</label>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="checkbox" name="service" value="Aroma_Therapy">
+	                <label>Aroma- therapy</label>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="checkbox" name="service" value="Advanced_Extraction">
+	                <label>Advanced Extraction</label>
+	              </td>
+	            </tr>
+	            <tr>
+	              <td class="serviceSelectionCell">
+	                <input type="radio" name="peels" value="Pumpkin_Peel">
+	                <label>Pumpkin Peel</label>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="radio" name="peels" value="Lactic_Peel">
+	                <label>30% Lactic Peel</label>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="radio" name="exfoliation" value="Back_Exfoliation">
+	                <label>Back &nbsp;&nbsp;Exfoliation</label>
+	              </td>
+	              <td class="serviceSelectionCell">
+	                <input type="radio" name="exfoliation" value="Body_Exfoliation">
+	                <label>Body Exfoliation</label>
+	              </td>
+	            </tr>
+	          </table>
+
+	          <div class="timeCounter" id="servicesTabTotals"></div>
+
+	        </div>
+
+	        <!-- step 2 Appointment Form -->
+	        <h1 style="font-size: 12px;">Appointment</h1>
+
+	        <div style="padding-top: 8px;">
+		        <div style="margin-bottom: 5px; text-align: left; width: 100%;font-size: 30px;">
+		            Schedule Your Appointment
+		        </div>
+		          
+		        <div style="height: 10px;"><hr class="blueLineSolid"></div>
+
+		        <table width="100%">
+		            <tr>
+			            <td width=260 valign=top style="padding-left: 1px;">
+			                <form action="javascript:void(0)" method="post">
+				                <div>
+				                    <input id="datepicker" type="hidden">
+				                    <div id="container" style="margin: 10px 0 0 0; height: 300px"></div>
+				                </div>
+			                </form>
+			            </td>
+			            <td valign=top style="padding-top: 9px;">
+			            	<div class="timeOptions" id="timeOptions"></div>
+			            </td>
+		            </tr>
+		        </table>
+
+            	<div class="appointment_spinner" id="appointment_spinner"></div>
+	   	        <div class="timeCounter" id="appointmentTabTotals"></div>
+	   	        <div class="appointmentConfirm" id="appointmentConfirm"></div>
+	        </div>
+
+	        <!-- step 3 Confirmation Form -->
+	        <h1 style="font-size: 12px;">Confirmation</h1>
+	        <div style="padding-top: 8px;">
+		        <div style="margin-bottom: 5px; text-align: center; width: 100%;font-size: 30px;">
+		            Confirm Your Information
+		        </div>
+		          
+		        <div style="height: 10px;"><hr class="blueLineSolid"></div>
+
+	   	        <div class="confirm_servicesSummary" id="confirm_servicesSummary"></div>
+		        <div class="confirm_servicesFacialPane" id="confirm_servicesFacialPane"></div>
+
+		        <div class="confirm_lowerContainerDiv">
+		          	<table>
+		          		<tr>
+		          			<td width="100">Date:</td>
+		          			<td><div class="confirm_appointmentSummary" id="confirm_appointmentDate"></div></td>
+		          		</tr>
+		          		<tr>
+		          			<td>Time:</td>
+		          			<td><div class="confirm_appointmentSummary" id="confirm_appointmentTime"></div></td>
+		          		</tr>
+		          		<tr>
+		          			<td>Price:</td>
+		          			<td><div class="confirm_appointmentSummary" id="confirm_appointmentPrice"></div></td>
+		          		</tr>
+		          		<tr>
+		          			<td>Name:</td>
+		          			<td id="confirm_namecell">
+		          				<input type="text" name="confirm_nameInput" id="confirm_nameInput" class="contactInput" placeholder="Name">
+		          				<div class="confirm_errorMsg">
+		          					<div class="confirm_errorMsgInvalid" id="confirm_nameErrorIcon"></div>
+		          				</div>
+		          			</td>
+		          		</tr>
+		          		<tr>
+		          			<td>Email:</td>
+		          			<td id="confirm_emailcell">
+		          				<input type="text" name="confirm_emailInput" id="confirm_emailInput" class="contactInput" placeholder="E-Mail Address">
+		          				<div class="confirm_errorMsg">
+		          					<div class="confirm_errorMsgInvalid" id="confirm_emailErrorIcon"></div>
+		          				</div>
+		          				<div class="confirm_inputFormatHelper" id="confirm_emailFormatHelper">Example:<br>monique@email.com</div>
+		          			</td>
+		          		</tr>
+		          		<tr>
+		          			<td>Phone:</td>
+		          			<td id="confirm_phonecell">
+		          				<input type="text" name="confirm_phoneInput" id="confirm_phoneInput" class="contactInput" placeholder="Phone Number">
+		          				<div class="confirm_errorMsg">
+		          					<div class="confirm_errorMsgInvalid" id="confirm_phoneErrorIcon"></div>
+		          				</div>
+		          				<div class="confirm_inputFormatHelper" id="confirm_phoneFormatHelper">Example:<br>(978) 712-0370</div>
+		          			</td>
+		          		</tr>
+			   	    </table>
+
+			   	    <div class="confirm_inputHelper" id="confirm_inputHelper">
+			   	    	<div class='confirmation_arrow'>Please provide an email address or phone number</div>
+			   	    </div>
+
+			   	    <div class="confirm_submitFinished" id="confirm_submitFinished">
+			   	    	<span style="left: 17px; position: relative; top: 10px; color: #00FF00; font-size: 24px;">Confirmed!</span>
+			   	    	<img src="img/success.png" height="63" width="70" style="margin-left: 39px; margin-top: 15px;">
+			   	    </div>
+			   	    <div class="confirm_submitFailed" id="confirm_submitFailed">
+			   	    	<span style="left: 22px; position: relative; top: 10px; color: #FF0000; font-size: 35px;">Failure</span>
+			   	    	<span style="font-size: 18px; position: relative; top: 14px; left: -1px; color: #FF0000;"><center>Call<br>978-712-0370</center></span>
+			   	    </div>
+
+		   	    	<div class="confirm_submitSpinner" id="confirm_submitSpinner"></div>
+		   	    	<div class="confirm_clientTips" id="confirm_clientTips">
+		                <ul>
+		                  <li>Please arrive 5-10 minutes early, if possible, to fill out your client questionnaire.</li>
+		                  <li>The studio is located inside the building on the second floor, Suite 8.</li>
+		                </ul>
+		   	    	</div>
+		   	    	<div class="confirm_clientError" id="confirm_clientErrorTips">
+			   	    	Sorry, but we've encountered an error while trying to book your appointment.  Please call 978-712-0370 to schedule it directly.
+		   	    	</div>
+		   	    </div>
+	        </div>
+        </div>
+
+        <!-- Inject the various widget modules (calendar, isteps, icheck, etc) -->
+		<script type="text/javascript" src="js/moduleLoader.min.js"></script>
+
+        </div>
+
+		<a href="bookOnline.html" id="bookAgain" class="bookAgain">Book Another Appointment</a>
+    </div>
+	<!-- END OF THE BOOKONLINE FORMATTING CODE, EVERYTHING AFTER THIS IS TEMPLATE CODE ONLY -->
+	
+	<br>
+
+  </div>
+</body>

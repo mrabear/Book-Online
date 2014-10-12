@@ -1,0 +1,117 @@
+@import url(http://fonts.googleapis.com/css?family=Handlee);
+
+body { 
+    margin: 0; 
+    padding: 0; 
+    font-family:  Handlee, Helvetica, sans-serif;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+hr.blue_fade {
+    border: 0;
+    height: 4px;
+    background-image: -webkit-linear-gradient(left, rgba(69,122,184,0.1), rgba(69,122,184,0.75), rgba(69,122,184,0.1)); 
+    background-image:    -moz-linear-gradient(left, rgba(69,122,184,0.1), rgba(69,122,184,0.75), rgba(69,122,184,0.1)); 
+    background-image:     -ms-linear-gradient(left, rgba(69,122,184,0.1), rgba(69,122,184,0.75), rgba(69,122,184,0.1)); 
+    background-image:      -o-linear-gradient(left, rgba(69,122,184,0.1), rgba(69,122,184,0.75), rgba(69,122,184,0.1));
+    margin: 0;
+    padding: 0;
+}
+
+a:link {
+    text-decoration: underline;
+    color: #457AB8;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #457AB8;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #FFFFFF;
+}
+
+a:active {
+    text-decoration: underline;
+    color: #FFFFFF;
+}
+
+
+.outer_text_box {
+    width: 698;
+    /* -webkit-border-radius: 20px; */
+    /* -moz-border-radius: 20px; */
+    /* border-radius: 20px; */
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+    border: 2px solid #457AB8;
+    background: rgba(69,122,184,0.0);
+    margin-top: -2px;
+}
+
+.gallery_box {
+    width: 698;
+
+    border: 2px solid #457AB8;
+    background: rgba(69,122,184,0.0);
+    margin-top: -2px;
+}
+
+.inner_text_box {
+    width: 90%;
+    padding: 10px 30px 10px 30px;
+}
+
+.maincontent {
+    width: 700px;
+    margin: 0 auto;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    font-family: Handlee;
+}
+
+a.message_title:link {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+a.message_title:visited {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+a.message_title:hover {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+a.message_title:active {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.titleContainer{
+    margin-top: 7px;
+    margin-bottom: 9px;
+    text-align: center;
+}
+
+.footer{
+    font-size: 20px;
+}
+
+.contentTopImage{
+    width: 696px;
+    margin-left: -31px;
+    margin-top: -11px;
+    border: 2px solid #457AB8;
+    margin-bottom: 8px;
+}
