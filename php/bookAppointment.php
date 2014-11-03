@@ -153,6 +153,8 @@ __EOD;
 
 		// Build the client email body
 		$EmailBody = <<<__EOD
+		Thank you for scheduling online, your appointment is confirmed. Please arrive 5-10 minutes early, if possible, to fill out your client questionnaire.  Once you arrive, we are located inside the building on the second floor, Suite 8.  
+		<br><br>
 		Your Scheduled Appointment:
 		<br>
 		<table style='width=100%; font-size: 20px; background-color: #CCCCCC; color: #000000; border: 1px solid #000000; border-collapse: collapse;'>
@@ -162,19 +164,46 @@ __EOD;
 			</tr>
 		</table>
 		<br>
+		We are happy to service you, Verbena Esthetics Studio is open to your feedback, and we encourage your thoughts.
+		<br><br>
+		Sincerely,
+		<br>
+		<b>Monique Gagne, Business Owner/Operator<br>
+		Master Esthetician Class 6<br>
+		Verbena Esthetics Studio<br>
+		234 Cabot Street Suite 8<br>
+		Beverly, Ma 01915<br>
+		978.712.0370<br>
+		<a href="mailto:monique@verbenaesthetics.com">monique@verbenaesthetics.com</a><br>
+		<a href="http://www.verbenaesthetics.com">www.verbenaesthetics.com</a><br>
 __EOD;
 
 		// Build a text only body just in case we are dealing with an email system that can't render HTML 
 		$EmailAltBody = <<<__EOD
+		Thank you for scheduling online, your appointment is confirmed. Please arrive 5-10 minutes early, if possible, to fill out your client questionnaire.  Once you arrive, we are located inside the building on the second floor, Suite 8.\r\n
+		\r\n
 		Your Scheduled Appointment:\r\n
 		\r\n
 		$servicesHTML\r\n
 		$appointmentDateStr\r\n
 		$appointmentTimeStr\r\n
+		\r\n
+		We are happy to service you, Verbena Esthetics Studio is open to your feedback, and we encourage your thoughts.\r\n
+		\r\n
+		Sincerely,\r\n
+		\r\n
+		Monique Gagne, Business Owner/Operator\r\n
+		Master Esthetician Class 6\r\n
+		Verbena Esthetics Studio\r\n
+		234 Cabot Street Suite 8\r\n
+		Beverly, Ma 01915\r\n
+		978.712.0370\r\n
+		monique@verbenaesthetics.com\r\n
+		www.verbenaesthetics.com\r\n
 __EOD;
 
 		// Populate the rest of the email properties and send
-		$clientMail->Subject = "xxxxxx Appointment Confirmation";    // Define a subject
+		$clientMail->Subject = "Verbena Appointment Confirmation";    // Define a subject
 		$clientMail->Body = $EmailBody;                               // Attach the HTML
 		$clientMail->AltBody = $EmailAltBody;                         // Attach the text body
 		$clientMail->addAddress($appointmentEmail, $appointmentName); // Add a recipient

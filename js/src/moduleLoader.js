@@ -227,5 +227,5 @@ var confirmSpinnerOptions = {
 
 // The spinner objects
 var appointment_spinnerPtr = document.getElementById('appointment_spinner');
-var appointmentSpinner = new Spinner( appointmentSpinnerOptions ).spin( appointment_spinnerPtr );
-var appointmentSpinner = new Spinner( confirmSpinnerOptions ).spin( confirm_submitSpinner );
+var appointmentSpinnerObj = new Spinner( appointmentSpinnerOptions ).spin( appointment_spinnerPtr );
+var confirmSpinnerObj = new Spinner( confirmSpinnerOptions ).spin( confirm_submitSpinner );

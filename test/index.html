@@ -1,0 +1,231 @@
+<!-- Need JS representation of the following query string
+
+date:1608922800
+timeStr:2%3A00%20-%203%3A45
+dateStr:Friday%2C%20December%2025th
+duration:105
+price:111
+emailString:bookonline@test.com
+phone:555-555-1234
+name:BookOnline%20Test
+services:NPNG%20Facial%2CBrow%20Wax%2CLip%20Wax%2CChin%20Wax%2C
+
+-->
+
+<html>
+
+<head>
+   <link rel="stylesheet" type="text/css" href="../../styles/global.css">
+   <link rel="stylesheet" type="text/css" href="../../styles/menu_styles.css">
+   <title>Book a Test Appointment to Validate the BookOnline Tool</title>
+</head>
+
+<script type="text/javascript" src="../js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="../js/lib/spin.min.js"></script>
+
+<style type="text/css">
+.confirm_submitFinished{
+	height: 121px;
+	width: 142px;
+	background-color: #000000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 5px solid #00FF00;
+}
+
+.confirm_submit{
+	height: 67px;
+	width: 142px;
+	background: #457AB8;
+	color: #fff;
+	display: block;
+	padding-top: 37px;
+	text-decoration: none;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 22px;
+	float: left;
+	margin-left: 43px;
+	margin-right: 15px;
+	border: 5px solid #457AB8;
+	cursor: pointer;
+}
+
+.email_test{
+	height: 104px;
+	width: 142px;
+	background: #000000;
+	color: #AAAAAA;
+	display: block;
+	text-decoration: none;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 22px;
+	float: left;
+	margin-left: 15px;
+	margin-right: 15px;
+	border: 5px solid #333333;
+}
+
+.cal_test{
+	height: 104px;
+	width: 142px;
+	background: #000000;
+	color: #AAAAAA;
+	display: block;
+	text-decoration: none;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 22px;
+	float: left;
+	margin-left: 15px;
+	margin-right: 15px;
+	border: 5px solid #333333;
+}
+
+.confirm_submitSpinner{
+	bottom: 114px;
+	position: relative;
+	right: -43px;
+	height: 104px;
+	width: 142px;
+	background-color: #9dc8e2;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 5px solid #457AB8;
+	float: left;
+	display: none;
+}
+
+.calSpinner{
+	bottom: 114px;
+	position: relative;
+	right: -103px;
+	height: 104px;
+	width: 142px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	float: left;
+}
+
+.emailSpinner{
+	bottom: 114px;
+	position: relative;
+	right: -73px;
+	height: 104px;
+	width: 142px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	float: left;
+}
+</style>
+
+<body bgcolor="#000000">
+  <div class='maincontent'>
+    <div style="position: relative;">
+
+		<div style="color: #FFFFFF;margin-bottom: 10px;font-size: 30px;">Click the button below to start a bookOnline test</div>
+
+   	    <div class="confirm_submit" id="confirm_submit" onclick="submitTestBooking();">Run Test</div>
+   	    <div class="email_test" id="email_test">
+			<div style="position: relative; top: 10px; color: #ffffff; font-size: 22px;margin-bottom: 15px;">Email Test</div>
+			<div id="cal_result" style="font-size: 40px;padding-top: 20px;display: inline;">
+				<span style="position: relative; top: 4px; color: #00FF00; font-size: 35px; display:none;" id="emailsuccess">Success</span>
+				<span id="emailnone">?</span>
+				<span style="position: relative; top: 4px; color: #FF0000; font-size: 35px; display:none;" id="emailfail">Failure</span>
+			</div>
+   	    </div>
+   	    <div class="cal_test" id="cal_test">
+   	    	<div style="position: relative; top: 10px; color: #ffffff; font-size: 22px;margin-bottom: 15px;">Calendar Test</div>
+			<div id="cal_result" style="font-size: 40px;padding-top: 20px; display: inline;">
+				<span style="position: relative; top: 4px; color: #00FF00; font-size: 35px; display:none;" id="calsuccess">Success</span>
+				<span id="calnone">?</span>
+				<span style="position: relative; top: 4px; color: #FF0000; font-size: 35px; display:none;" id="calfail">Failure</span>
+			</div>
+   	    </div>
+
+    	<div class="confirm_submitSpinner" id="confirm_submitSpinner"></div>
+
+		<script type="text/javascript">
+			appointmentDuration = 30;
+
+			// The form submission loading spinner
+			var confirmSpinnerOptions = {
+				lines: 9, // The number of lines to draw
+				length: 16, // The length of each line
+				width: 6, // The line thickness
+				radius: 10, // The radius of the inner circle
+				corners: 1, // Corner roundness (0..1)
+				rotate: 0, // The rotation offset
+				direction: 1, // 1: clockwise, -1: counterclockwise
+				color: '#457AB8', // #rgb or #rrggbb or array of colors
+				speed: 0.8, // Rounds per second
+				trail: 44, // Afterglow percentage
+				shadow: false, // Whether to render a shadow
+				hwaccel: false, // Whether to use hardware acceleration
+				className: 'spinner', // The CSS class to assign to the spinner
+				zIndex: 9999999999 // The z-index (defaults to 2000000000)
+				//top: '50%', // Top position relative to parent
+				//left: '50%' // Left position relative to parent
+			};
+
+			// The spinner object
+			var submitSpinnerObj	= new Spinner( confirmSpinnerOptions ).spin( confirm_submitSpinner );
+
+			function submitTestBooking(){
+				$("#confirm_submitSpinner").show();
+				$("#emailfail").hide();
+				$("#emailsuccess").hide();
+				$("#calfail").hide();
+				$("#calsuccess").hide();
+				$("#emailnone").hide();
+				$("#calnone").hide();
+
+					$.post( "bookTestAppointment.php", { 
+								date: "1608922800",
+								timeStr: "2%3A00%20-%203%3A45",
+								dateStr: "Friday%2C%20December%2025th",
+								duration: "105",
+								price:"111",
+								emailString:"bookonline@test.com",
+								phone:"555-555-1234",
+								name:"BookOnline%20Test",
+								services:"NPNG%20Facial%2CBrow%20Wax%2CLip%20Wax%2CChin%20Wax%2C" })
+						.done(function( responseHTML ) {
+							$("#confirm_submitSpinner").hide();
+
+							if( responseHTML.charAt( 0 ) == "0" ){
+								$("#calfail").show();
+							} else {
+								$("#calsuccess").show();
+							}
+
+							if( responseHTML.charAt( 1 ) == "0" ){
+								$("#emailfail").show();
+							} else {
+								$("#emailsuccess").show();
+							}
+
+							//$("#debugOutput").html( responseHTML );
+					    });
+			}
+		</script>
+
+    </div>
+  </div>
+  <div id="debugOutput"></div>
+</body>
+

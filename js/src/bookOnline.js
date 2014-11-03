@@ -484,11 +484,22 @@ function processFormSubmission(){
 	if( $("#confirm_emailErrorIcon").attr( 'class' ) == 'confirm_errorMsgValid')
 		emailString = $("#confirm_emailInput").val();
 
-	$.post( "php/bookAppointment.php", { date:     	escape( appointmentDate.getTime() / 1000),
+	/*$("#debugOutput").html( "<pre>\n" +
+							"date:" + escape( appointmentDate.getTime() / 1000) + "\n" +
+							"timeStr:" + escape( getTimeString( appointmentDate, appointmentDuration )) + "\n" +
+							"dateStr:" + escape( getDateString( appointmentDate )) + "\n" +
+							"duration:" + appointmentDuration + "\n" +
+							"price:" + calculatePrice() + "\n" +
+							"emailString:" + escape( emailString ) + "\n" +
+							"phone:" + escape( phoneString ) + "\n" +
+							"name:" + escape( $("#confirm_nameInput").val()) + "\n" +
+							"services:" + escape( servicesList) + "\n" );*/
+
+	$.post( "php/bookAppointment.php", { date:  escape( appointmentDate.getTime() / 1000),
 									 timeStr:  	escape( getTimeString( appointmentDate, appointmentDuration )),
 									 dateStr:  	escape( getDateString( appointmentDate )),
 									 duration: 	appointmentDuration,
-									 price:		calculatePrice,
+									 price:		calculatePrice(),
 									 email: 	escape( emailString ),
 									 phone:		escape( phoneString ),
 									 name: 		escape( $("#confirm_nameInput").val()),

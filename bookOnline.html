@@ -1,7 +1,9 @@
 <html>
 
 <head>
-   <link rel="stylesheet" type="text/css" href="css/global.css">
+   <!-- Styles from the Verbenaesthetics.com main site, none of these are requied for the code components of bookOnline -->
+   <link rel="stylesheet" type="text/css" href="../styles/global.css">
+   <link rel="stylesheet" type="text/css" href="../styles/menu_styles.css">
 
    <!-- bookOnline required style sheets, these can be modified to change the look of the application -->
    <link rel="stylesheet" type="text/css" href="css/calendarStyle.css">
@@ -21,6 +23,24 @@
 
 <body bgcolor="#000000">
   <div class='maincontent'>
+    <div style="position: relative;">
+    <img width="700" height="180" src="../img/header.png">
+      <img style="position: absolute; cursor: pointer; top: 0px; right: 0px;" src="img/bookOnline_buttom_off.png" onmouseout="this.src='img/bookOnline_buttom_off.png'" onmouseover="this.src='img/bookOnline_buttom_on.png'" onclick="document.location='bookOnline.html'">
+    </div>
+
+    <!-- CSSMenu Code: Go to http://cssmenumaker.com/builder/3221871 to build another -->
+    <div id="cssmenu"><div id="bg-one"></div><div id="bg-two"></div><div id="bg-three"></div><div id="bg-four"></div>
+        <ul>
+           <li><a href="../index.html">Home</a></li>
+           <li><a href="../facials.html">Facials</a></li>
+           <li><a href="../services.html">Services</a></li>
+           <li><a href="../master_esthetician.html">Master Esthetician</a></li>
+           <li><a href="../gallery.html">Gallery</a></li>
+           <li><a href="../contact.php">Contact Us</a></li>
+        </ul>
+    </div>
+    <!-- End CSSMenu Code -->
+    
     <div class="bookonline_outer_text_box">
       <div class="inner_text_box">
 
@@ -327,4 +347,5 @@
 	<br>
 
   </div>
+  <!--<div id="debugOutput"></div>-->
 </body>
